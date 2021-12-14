@@ -26,5 +26,8 @@ if (code === null) {
   (async () => {
     const tokenInfo = await rc.authorize({code, redirect_uri: redirectUri});
     console.log(tokenInfo.access_token);
+    const p = document.createElement('p');
+    p.innerHTML = `You have logged in successfully!<br/><br/><a href="${redirectUri}">Test again</a>`;
+    document.body.appendChild(p);
   })();
 }
